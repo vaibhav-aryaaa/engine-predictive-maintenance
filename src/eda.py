@@ -9,3 +9,11 @@ def run_eda():
 
     print("\nTarget Distribution:")
     print(df[TARGET_COLUMN].value_counts(normalize=True))
+
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(df[FEATURE_COLUMN].corr(), annot=True, cmap='RdYlGn')
+    plt.title("Do sensors correlate with each other?")
+    plt.show()
+
+if __name__ == "__main__":
+    run_eda()
